@@ -1,0 +1,8 @@
+- hosts: libvirt
+  gather_facts: false
+  command: K8SIZE={{ size }} vagrant up
+  args:
+    chdir: /root/kubespray
+  register: up
+- hosts: libvirt
+  debug: msg=up
