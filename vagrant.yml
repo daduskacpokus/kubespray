@@ -1,4 +1,4 @@
-- hosts: {{ host_hook }}
+- hosts: "{{ host_hook }}"
   gather_facts: false
   command: K8SIZE={{ size }} vagrant up
   args:
