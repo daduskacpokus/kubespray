@@ -1,8 +1,10 @@
 - hosts: "{{ host_hook }}"
   gather_facts: false
   tasks:
-    - command: K8SIZE={{ size }} vagrant up
+    - command: vagrant up
       args:
         chdir: /kubespray
-    - register: up
-      debug: msg=up
+      environment:
+        - K8SIZE: "{{ size }}"
+      register: up
+    - debug: msg=up
