@@ -3,6 +3,6 @@
   tasks:
     - command: K8SIZE={{ size }} vagrant up
       args:
-        chdir: /root/kubespray
+        chdir: /kubespray
     - register: up
       debug: msg=up
